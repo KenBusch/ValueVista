@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Price Prediction</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('predictpage1.webp') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+    color: white;
+  }
+
+  .predict-btn {
+    font-size: 24px;
+    color: #ffffff;
+    background-color: #0066ff;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    outline: none;
+  }
+
+  .form-popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    bottom: 80px;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.7);
+    z-index: 10;
+  }
+
+  .form-container {
+    max-width: 300px;
+    padding: 20px;
+  }
+
+  .form-container input[type="text"],
+  .form-container input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #00ff00;
+    background-color: #000;
+    color: #0f0;
+    outline: none;
+    display: none; /* Initially hide all inputs */
+  }
+
+  .form-container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #ff0055;
+    color: #fff;
+    outline: none;
+    display: none; /* Initially hide submit button */
+  }
+</style>
+</head>
+<body>
+
+<button id="predictBtn" onclick="toggleForm()">Predict Price</button>
+
+<div class="form-popup" id="myForm">
+  <form action="/predict" method="post" class="form-container" id="predictionForm">
+    <input type="text" placeholder="Manufacturer" name="manufacturer" required>
+    <input type="text" placeholder="Model" name="model" required>
+    <input type="text" placeholder="Condition" id="condition" name="condition" oninput="showNextInput('cylinders')">
+    <input type="text" placeholder="Cylinders" id="cylinders" name="cylinders" oninput="showNextInput('fuel')">
+    <input type="text" placeholder="Fuel" id="fuel" name="fuel" oninput="showNextInput('odometer')">
+    <input type="number" placeholder="Odometer" id="odometer" name="odometer" oninput="showNextInput('title_status')">
+    <input type="text" placeholder="Title Status" id="title_status" name="title_status" oninput="showNextInput('transmission')">
+    <input type="text" placeholder="Transmission" id="transmission" name="transmission" oninput="showNextInput('drive')">
+    <input type="text" placeholder="Drive" id="drive" name="drive" oninput="showNextInput('type')">
+    <input type="text" placeholder="Type" id="type" name="type" oninput="showNextInput('paint_color')">
+    <input type="text" placeholder="Paint Color" id="paint_color" name="paint_color" oninput="showNextInput('lat')">
+    <input type="number" placeholder="Latitude" id="lat" name="lat" step="any" oninput="showNextInput('long')">
+    <input type="number" placeholder="Longitude" id="long" name="long" step="any" oninput="showNextInput('car_age')">
+    <input type="number" placeholder="Car Age" id="car_age" name="car_age" oninput="showNextInput('submit')">
+    <!-- Add more inputs as per your requirement -->
+    <input type="submit" value="Submit Prediction">
+  </form>
+</div>
+
+<script>
+let currentInputIndex = 0;
+const inputs = document.querySelectorAll('.form-container input[type="text"], .form-container input[type="number"]');
+
+function toggleForm() {
+  document.getElementById('myForm').style.display = 'block';
+  showInput(0); // Show the first input initially
+}
+
+function showInput(index) {
+  if (index < inputs.length) {
+    inputs.forEach((input, i) => {
+      input.style.display = i === index ? 'block' : 'none';
+    });
+    currentInputIndex = index;
+    // Add event listener to the current input
+    inputs[currentInputIndex].addEventListener('input', handleInput);
+  } else {
+    // If no more inputs, show the submit button
+    document.querySelector('.form-container input[type="submit"]').style.display = 'block';
+  }
+}
+
+function handleInput() {
+  // Once input has some text, move to the next input
+  if (this.value.trim() !== '') {
+    this.removeEventListener('input', handleInput); // Remove listener from the current input
+    showInput(currentInputIndex + 1); // Show the next input
+  }
+}
+
+toggleForm(); // Optionally call toggleForm to show the form by default
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,48 @@
+.background-container {
+  position: relative;
+  width: 100%;
+  height: 768px; /* Adjust according to your image */
+  background-size: cover;
+}
+
+.predict-button {
+  position: absolute;
+  bottom: 1.5cm; /* Adjust the vertical position here */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('path_to_your_button_image'); /* Replace with the image URL */
+  background-size: cover;
+  width: 230px; /* Increase the width here */
+  height: 60px; /* Increase the height here */
+  border: none;
+  cursor: pointer;
+}
+
+/* Get the background color of the button image */
+.predict-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255); /* Replace with the actual color */
+  opacity: 0.5;
+}
+
+/* Set the font color and size */
+.predict-button {
+  color: rgb(0, 0, 0); /* Replace with the actual color */
+  font-size: 16px; /* Adjust the font size here */
+  font-weight: bold;
+}
+
+.prediction-form {
+  position: absolute;
+  top: 50%; /* Position the form to align with the background placeholder */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.75);
+  padding:
+
+

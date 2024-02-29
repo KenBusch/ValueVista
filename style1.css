@@ -1,0 +1,62 @@
+/* Add this CSS inside the <style> tag in the head of your HTML document */
+
+/* General body styles */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #000; /* Assuming a dark theme for cyberpunk aesthetic */
+  color: #fff;
+}
+
+/* Container for the form to center it on the page */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(10, 23, 38, 0.9); /* Semi-transparent background */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Style for all text input and number input fields */
+input[type="text"], input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #34f5c5; /* Neon cyan border */
+  background: transparent;
+  color: #34f5c5; /* Neon cyan text color */
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 0 5px rgba(52, 245, 197, 0.5); /* Soft glow effect */
+  transition: all 0.3s ease;
+}
+
+/* Hover and focus states with a stronger glow for interactivity */
+input[type="text"]:hover, input[type="number"]:hover,
+input[type="text"]:focus, input[type="number"]:focus {
+  box-shadow: 0 0 12px rgba(52, 245, 197, 0.8);
+  outline: none; /* Remove default focus outline */
+}
+
+/* Style for the submit button */
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background: #ff4081; /* Bright pink background */
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 64, 129, 0.7); /* Pink glow effect */
+  transition: background-color 0.3s ease;
+}
+
+/* Hover and focus states for the submit button */
+.submit-btn:hover, .submit-btn:focus {
+  background: #f50057; /* Slightly darker pink on hover/focus */
+  box-shadow: 0 0 15px rgba(245, 0, 87, 0.8);
+  outline: none;
+}

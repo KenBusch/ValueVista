@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Price Prediction</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-container" style="background-image: url('imagepredict.png');">
+    <button id="predictButton" class="predict-button">Click to predict price</button>
+    <div id="predictionForm" class="prediction-form" style="display: none;">
+      <form action="your_server_endpoint" method="post">
+        <input type="text" placeholder="Manufacturer" name="manufacturer" required>
+        <input type="text" placeholder="Model" name="model" required>
+        <input type="text" placeholder="Condition" name="condition" required>
+        <input type="text" placeholder="Cylinders" name="cylinders" required>
+        <input type="text" placeholder="Fuel" name="fuel" required>
+        <input type="number" placeholder="Odometer" name="odometer" required>
+        <input type="text" placeholder="Title Status" name="title_status" required>
+        <input type="text" placeholder="Transmission" name="transmission" required>
+        <input type="text" placeholder="Drive" name="drive" required>
+        <input type="text" placeholder="Type" name="type" required>
+        <input type="text" placeholder="Paint Color" name="paint_color" required>
+        <input type="number" placeholder="Latitude" name="lat" step="any" required>
+        <input type="number" placeholder="Longitude" name="long" step="any" required>
+        <input type="number" placeholder="Car Age" name="car_age" required>
+        <button type="submit" class="submit-button">Predict Price</button>
+      </form>
+    </div>
+  </div>
+
+<script>
+  var predictButton = document.getElementById('predictButton');
+  var predictionForm = document.getElementById('predictionForm');
+
+  predictButton.onclick = function() {
+    predictionForm.style.display = 'block';
+    predictButton.style.display = 'none';
+  };
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
