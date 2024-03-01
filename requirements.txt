@@ -3,5 +3,5 @@ streamlit
 scikit-learn
 pandas
 predict
-numpy
+numpy==1.19.2
 pywavelets
