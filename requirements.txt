@@ -3,6 +3,7 @@ setuptools>=57.0.0
 wheel>=0.36.2
 Cython>=0.29.21
 joblib==0.14.1
+numpy<=1.25.1,>=1.19.2
 scikit-learn==0.23.1
 pandas>2.0
 pywavelets
