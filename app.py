@@ -6,7 +6,7 @@ import pickle  # If your models are pickled
 background_image_style = """
 <style>
 .stApp {
-    background-image: url("DALL·E 2024-02-26 13.02.13 - Visualize a crystal-clear scene where a man is standing beside a car, his face turned towards it, clearly visible and marked by an expression of admir.webp");
+    background-image: url("BackgroundImage");
     background-size: cover;
 }
 </style>
@@ -29,12 +29,12 @@ with open('my_rf_model.pkl', 'rb') as f:
 st.markdown("<h1 style='text-align: center;'>ValueVista</h1>", unsafe_allow_html=True)
 st.markdown("<h2 style='text-align: center;'>Your Roadmap to the Best Car Deals</h2>", unsafe_allow_html=True)
 
-# Introduction markdown
-st.markdown('Welcome to ValueVista, a predictive tool for estimating the market value of used cars!')
-st.markdown('Please enter the details of your car to get an estimated market price:')
-            
+# Introduction markdown with center alignment
+st.markdown("<p style='text-align: center;'>Welcome to ValueVista, a predictive tool for estimating the market value of used cars!</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'>Please enter the details of your car to get an estimated market price:</p>", unsafe_allow_html=True)
+           
 # Input fields
-st.header("Car Details")
+#st.header("Car Details")
 
 # Using columns to organize inputs
 col1, col2 = st.columns(2)
