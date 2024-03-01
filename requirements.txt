@@ -1,8 +1,12 @@
 joblib==0.14.1
 streamlit==1.7.0
 scikit-learn==0.23.1
-pandas==1.0.5
+numpy>=1.19.2
+Cython>=0.29.21
+pandas>=1.2.0
 predict
-numpy==1.19.2
 pywavelets
-Cython==0.29.23
+pip>=22.0.3
+setuptools>=57.0.0
+wheel>=0.36.2
+
