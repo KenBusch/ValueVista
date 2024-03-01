@@ -5,3 +5,4 @@ pandas
 predict
 numpy==1.19.2
 pywavelets
+Cython==0.29.23
