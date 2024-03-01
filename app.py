@@ -2,8 +2,19 @@ import streamlit as st
 import pandas as pd
 import pickle  # If your models are pickled
 
+# CSS to inject contained in a string
+background_image_style = """
+<style>
+.stApp {
+    background-image: url("");
+    background-size: cover;
+}
+</style>
+"""
 
-# Assuming you have loaded your preprocessor and model
+st.markdown(background_image_style, unsafe_allow_html=True)
+
+
 # preprocessor = pickle.load(open('path_to_preprocessor.pkl', 'rb'))
 # rf_model = pickle.load(open('path_to_rf_model.pkl', 'rb'))
 
@@ -14,12 +25,14 @@ with open('my_rf_model.pkl', 'rb') as f:
     pickled_model = pickle.load(f)
 
 
-# Application title
-st.title('ValueVista: Your Roadmap to the Best Car Deals')
+# Center-aligned title and subtitle
+st.markdown("<h1 style='text-align: center;'>ValueVista</h1>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center;'>Your Roadmap to the Best Car Deals</h2>", unsafe_allow_html=True)
 
 # Introduction markdown
-st.markdown('Welcome to ValueVista, a predictive tool for estimating the market value of used cars. Please enter the details of your car to get an estimated market price.')
-
+st.markdown('Welcome to ValueVista, a predictive tool for estimating the market value of used cars!')
+st.markdown('Please enter the details of your car to get an estimated market price:')
+            
 # Input fields
 st.header("Car Details")
 
