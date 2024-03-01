@@ -41,7 +41,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     manufacturer = st.selectbox('Manufacturer', ['bmw', 'Audi', 'Toyota', 'Honda', 'Ford', 'Others'])
-    model = st.text_input('Model',['others'])
+    model = st.selectbox('Model',['others'])
     condition = st.selectbox('Condition', ['excellent','New', 'Like New','Good', 'Fair', 'Salvage'])
     cylinders = st.selectbox('Cylinders', ['4 cylinders','3 cylinders','5 cylinders', '6 cylinders', '8 cylinders', '10 cylinders', '12 cylinders'])
     fuel = st.selectbox('Fuel Type', ['gas', 'Diesel', 'Electric', 'Hybrid', 'Other'])
