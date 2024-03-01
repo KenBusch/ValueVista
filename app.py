@@ -1,13 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle  # If your models are pickled
-from sklearn.model_selection import train_test_split
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import OneHotEncoder, StandardScaler
-from sklearn.linear_model import Lasso
-from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import RandomizedSearchCV
+
 
 # Assuming you have loaded your preprocessor and model
 # preprocessor = pickle.load(open('path_to_preprocessor.pkl', 'rb'))
