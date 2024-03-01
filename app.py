@@ -26,7 +26,7 @@ with open('my_rf_model.pkl', 'rb') as f:
 
 
 # Center-aligned title and subtitle
-st.markdown("<h1 style='text-align: center;'>ValueVista</h1>", unsafe_allow_html=True)
+st.title("<h1 style='text-align: center;'>ValueVista</h1>", unsafe_allow_html=True)
 st.markdown("<h2 style='text-align: center;'>Your Roadmap to the Best Car Deals</h2>", unsafe_allow_html=True)
 
 # Introduction markdown with center alignment
