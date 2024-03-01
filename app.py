@@ -40,22 +40,22 @@ st.markdown("<p style='text-align: center;'>Please enter the details of your car
 col1, col2 = st.columns(2)
 
 with col1:
-    manufacturer = st.selectbox('Manufacturer', ['BMW', 'Audi', 'Toyota', 'Honda', 'Ford', 'Others'])
-    model = st.text_input('Model')
-    condition = st.selectbox('Condition', ['New', 'Like New', 'Excellent', 'Good', 'Fair', 'Salvage'])
-    cylinders = st.selectbox('Cylinders', ['3 cylinders', '4 cylinders', '5 cylinders', '6 cylinders', '8 cylinders', '10 cylinders', '12 cylinders'])
-    fuel = st.selectbox('Fuel Type', ['Gas', 'Diesel', 'Electric', 'Hybrid', 'Other'])
-    paint_color = st.selectbox('Paint Color', ['Black', 'White', 'Grey', 'Red', 'Blue', 'Green', 'Yellow', 'Orange', 'Purple', 'Brown', 'Other'])
-    car_age = st.number_input('Car Age', min_value=0)
+    manufacturer = st.selectbox('Manufacturer', ['bmw', 'Audi', 'Toyota', 'Honda', 'Ford', 'Others'])
+    model = st.text_input('Model',['others'])
+    condition = st.selectbox('Condition', ['excellent','New', 'Like New','Good', 'Fair', 'Salvage'])
+    cylinders = st.selectbox('Cylinders', ['4 cylinders','3 cylinders','5 cylinders', '6 cylinders', '8 cylinders', '10 cylinders', '12 cylinders'])
+    fuel = st.selectbox('Fuel Type', ['gas', 'Diesel', 'Electric', 'Hybrid', 'Other'])
+    paint_color = st.selectbox('Paint Color', ['black', 'White', 'Grey', 'Red', 'Blue', 'Green', 'Yellow', 'Orange', 'Purple', 'Brown', 'Other'])
+    car_age = st.number_input('Car Age', min_value=0, value=7)
     
 with col2:
-    odometer = st.number_input('Odometer', min_value=0)
-    title_status = st.selectbox('Title Status', ['Clean', 'Salvage', 'Rebuilt', 'Parts Only', 'Lien', 'Missing'])
-    transmission = st.selectbox('Transmission', ['Automatic', 'Manual', 'Other'])
-    drive = st.selectbox('Drive', ['FWD', 'RWD', '4WD'])
-    type_ = st.selectbox('Type', ['Sedan', 'SUV', 'Truck', 'Minivan', 'Coupe', 'Wagon', 'Convertible', 'Sports Car', 'Other'])
-    lat = st.number_input('Latitude', format='%f')
-    long = st.number_input('Longitude', format='%f')
+    odometer = st.number_input('Odometer', min_value=0, value=57000)
+    title_status = st.selectbox('Title Status', ['clean', 'Salvage', 'Rebuilt', 'Parts Only', 'Lien', 'Missing'])
+    transmission = st.selectbox('Transmission', ['automatic', 'Manual', 'Other'])
+    drive = st.selectbox('Drive', ['4wd','FWD', 'RWD'])
+    type_ = st.selectbox('Type', ['SUV', 'Sedan', 'Truck', 'Minivan', 'Coupe', 'Wagon', 'Convertible', 'Sports Car', 'Other'])
+    lat = st.number_input('Latitude', format='%f', value=47.6061)
+    long = st.number_input('Longitude', format='%f', value=122.3328)
 
 
 # Button to predict price
