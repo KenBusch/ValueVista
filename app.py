@@ -6,7 +6,7 @@ import pickle  # If your models are pickled
 background_image_style = """
 <style>
 .stApp {
-    background-image: url("");
+    background-image: url("DALL·E 2024-02-26 13.02.13 - Visualize a crystal-clear scene where a man is standing beside a car, his face turned towards it, clearly visible and marked by an expression of admir.webp");
     background-size: cover;
 }
 </style>
